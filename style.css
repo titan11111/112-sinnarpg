@@ -1,0 +1,80 @@
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  body {
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 12px;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+  }
+  #gameContainer {
+    position: relative;
+    border: 3px solid #444;
+    box-shadow: 0 0 40px rgba(0,150,255,0.3);
+    flex: 0 0 auto;
+  }
+  canvas {
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+  #mobileControls {
+    display: none;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 160px;
+    pointer-events: none;
+  }
+  .dpad {
+    position: absolute;
+    bottom: 20px; left: 20px;
+    width: 120px; height: 120px;
+    pointer-events: all;
+  }
+  .dpad-btn {
+    position: absolute;
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.25);
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: all;
+  }
+  #btn-up    { top:0;   left:42px; }
+  #btn-down  { bottom:0;left:42px; }
+  #btn-left  { top:42px;left:0;   }
+  #btn-right { top:42px;right:0;  }
+  .action-btns {
+    position: absolute;
+    bottom: 20px; right: 20px;
+    display: flex; gap: 12px;
+    pointer-events: all;
+  }
+  .action-btn {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.5);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  #btn-attack { background: rgba(220,60,60,0.6); }
+  #btn-skill  { background: rgba(60,100,220,0.6); }
+  @media (max-width: 700px) {
+    #mobileControls { display: block; }
+  }
